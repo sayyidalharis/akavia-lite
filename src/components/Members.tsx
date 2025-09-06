@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Linkedin, Twitter, Github } from 'lucide-react';
+import { Linkedin, Instagram, Github } from 'lucide-react';
 import shImage from '../img/sayyid.png';
 import auliaImage from '../img/auliacropped.png';
 import akmalImage from '../img/akmalcropped.png';
@@ -14,7 +14,7 @@ interface Member {
   image: string;
   social: {
     linkedin?: string;
-    twitter?: string;
+    instagram?: string;
     github?: string;
   };
 }
@@ -30,33 +30,33 @@ const Members: React.FC = () => {
       id: 1,
       name: "Sayyid Haris",
       role: "Lead Manager",
-      bio: "Passionate about creating meaningful experiences through thoughtful design and strategic thinking.",
+      bio: "Strong fintech background, driving efficient software solutions and strategic growth.",
       image: shImage,
       social: {
-        linkedin: "#",
-        twitter: "#",
+        linkedin: "https://www.linkedin.com/in/sayyidharis/",
+        instagram: "https://www.instagram.com/akavia_tech/",
       }
     },
     {
       id: 2,
       name: "Aulia Rahman",
       role: "Lead Designer",
-      bio: "Full-stack developer with expertise in modern web technologies and scalable architecture solutions.",
+      bio: "Passionate about creating meaningful experiences through thoughtful design and intuitive usability.",
       image: auliaImage,
       social: {
-        linkedin: "#",
-        github: "#",
+        linkedin: "https://www.linkedin.com/in/aulia-rahman-zulfi-634a71205/",
+        github: "https://github.com/Crymlll",
       }
     },
     {
       id: 3,
       name: "Emma Rodriguez",
       role: "Lead Engineer",
-      bio: "User-centered design advocate who believes in creating intuitive and accessible digital experiences.",
+      bio: "Expertise in making custom software solutions, scalable architecture, and containerized deployments.",
       image: akmalImage,
       social: {
-        linkedin: "#",
-        twitter: "#",
+        linkedin: "https://www.linkedin.com/in/akmalfauzansuranta/",
+        instagram: "https://www.instagram.com/ouuzannn/",
       }
     }
   ];
@@ -120,12 +120,12 @@ const Members: React.FC = () => {
                       <Linkedin size={16} />
                     </a>
                   )}
-                  {member.social.twitter && (
+                  {member.social.instagram && (
                     <a
-                      href={member.social.twitter}
+                      href={member.social.instagram}
                       className="p-2 bg-[#363A3D]/10 rounded-full text-[#363A3D] hover:bg-[#363A3D] hover:text-[#FFFFFF] transition-all duration-300"
                     >
-                      <Twitter size={16} />
+                      <Instagram size={16} />
                     </a>
                   )}
                   {member.social.github && (

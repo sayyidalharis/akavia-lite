@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
 
           <div>
             <motion.button
-              initial={{ opacity: 0, y: 35, z: 99 }}
+              initial={{ opacity: 0, y: 25, z: 99 }}
               animate={{ opacity: 1, y: 5, z: 99}}
               transition={{ delay: 0.9, duration: 0.8 }}
               onClick={scrollToPortfolio}

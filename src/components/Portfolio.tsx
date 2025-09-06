@@ -10,6 +10,7 @@ interface Project {
   description: string;
   image: string;
   tags: string[];
+  link: string;
 }
 
 const Portfolio: React.FC = () => {
@@ -24,17 +25,28 @@ const Portfolio: React.FC = () => {
       title: "Photography Booking Platform",
       category: "Web Development",
       description: "A simple way for clients to book photographers, secure their schedule, and attach payments — all in one smooth experience.",
-      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
-      tags: ["React", "Next.js", "PostgreSQL"]
+      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800", // Replace with your image path
+      tags: ["React", "Next.js", "PostgreSQL"],
+      link: "https://projectkuro.vercel.app/" // Replace with your project link
     },
     {
       id: 2,
-      title: "Brand Identity Design",
-      category: "Branding",
-      description: "Complete brand identity package including logo, guidelines, and marketing materials.",
-      image: "https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=800",
-      tags: ["Design", "Branding", "Identity"]
+      title: "Web Development",
+      category: "Solo Project",
+      description: "A fun web app that predicts the attractiveness of anime characters using a custom-trained machine learning regression model, blending subjective ratings with objective features.",
+      image: "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=800", // placeholder stock image, anime-inspired UI screenshot would be even better
+      tags: ["Machine Learning", "Regression", "Web App"],
+      link: ""
     }
+    // {
+    //   id: 2,
+    //   title: "Brand Identity Design",
+    //   category: "Branding",
+    //   description: "Complete brand identity package including logo, guidelines, and marketing materials.",
+    //   image: "https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=800", // Replace with your image path
+    //   tags: ["Design", "Branding", "Identity"],
+    //   link: "#" // Replace with your project link
+    // }
     // ,
     // {
     //   id: 3,
@@ -122,10 +134,21 @@ const Portfolio: React.FC = () => {
 
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-[#363A3D]/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <button className="flex items-center space-x-2 bg-[#FFFFFF] text-[#363A3D] px-6 py-3 rounded-full font-medium hover:scale-105 transform transition-transform">
-                  <span>View Project</span>
-                  <ExternalLink size={16} />
-                </button>
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 bg-[#FFFFFF] text-[#363A3D] px-6 py-3 rounded-full font-medium hover:scale-105 transform transition-transform"
+                  >
+                    <span>View Project</span>
+                    <ExternalLink size={16} />
+                  </a>
+                ) : (
+                  <div className="flex items-center space-x-2 bg-[#FFFFFF]/80 text-[#363A3D]/70 px-6 py-3 rounded-full font-medium">
+                    <span>Link Unavailable</span>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
