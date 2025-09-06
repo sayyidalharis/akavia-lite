@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Linkedin, Instagram, Github } from 'lucide-react';
+import { Linkedin, Instagram, Github, Search } from 'lucide-react';
 import shImage from '../img/sayyid.png';
 import auliaImage from '../img/auliacropped.png';
 import akmalImage from '../img/akmalcropped.png';
@@ -24,6 +24,12 @@ const Members: React.FC = () => {
     triggerOnce: true,
     threshold: 0.2,
   });
+  const [showTempMessage, setShowTempMessage] = useState(false);
+
+  const handleSeeMoreClick = () => {
+    setShowTempMessage(true);
+    setTimeout(() => setShowTempMessage(false), 2300);
+  };
 
   const members: Member[] = [
     {
@@ -140,6 +146,40 @@ const Members: React.FC = () => {
               </div>
             </motion.div>
           ))}
+
+          <button
+            className="group col-span-1 md:col-span-2 lg:col-span-3 mt-6 flex items-center justify-center space-x-4 border-t border-[#FFFFFF]/20 pt-6 w-full text-[#FFFFFF]/70 hover:text-[#FFFFFF] transition-colors duration-300"
+            aria-label={showTempMessage ? "Temporary message" : "See more team members"}
+            onClick={handleSeeMoreClick}
+            disabled={showTempMessage}
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {showTempMessage ? (
+                <motion.span
+                  key="message"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-lg font-medium text-center"
+                >
+                  We’re still updating this section — more team members will appear soon!
+                </motion.span>
+              ) : (
+                <motion.div
+                  key="see-more"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.3 }}
+                  className="flex items-center justify-center space-x-4"
+                >
+                  <span className="text-lg font-medium">See more team members</span>
+                  <Search size={20} className="transform transition-transform duration-300 group-hover:scale-110" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </button>
         </div>
       </div>
     </section>
