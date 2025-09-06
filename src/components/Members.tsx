@@ -56,7 +56,7 @@ const Members: React.FC = () => {
     },
     {
       id: 3,
-      name: "Emma Rodriguez",
+      name: "Akmal Fauzan",
       role: "Lead Engineer",
       bio: "Expertise in making custom software solutions, scalable architecture, and containerized deployments.",
       image: akmalImage,
