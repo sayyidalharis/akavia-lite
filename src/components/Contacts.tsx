@@ -28,6 +28,27 @@ const Contacts: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Simulate form submission
+    const { name, email, subject, message } = formData;
+    console.log("Form submitted:", { name, email, subject, message });
+    // Reset form and show thank you message
+
+    // Construct the message text, combining all form fields
+    const fullMessage = `
+      Hi! I'd like to make an inquiry regarding a project.
+
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+Message: ${message}
+    `.trim(); // .trim() removes leading/trailing whitespace
+
+    console.log("Full message to be sent:", fullMessage);
+
+    const encodedMessage = encodeURIComponent(fullMessage);
+    const whatsappLink = `https://wa.me/6282298303678?text=${encodedMessage}`;
+
+    // Open WhatsApp link in a new tab
+    window.open(whatsappLink, '_blank');
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
