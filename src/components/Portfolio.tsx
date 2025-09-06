@@ -31,8 +31,8 @@ const Portfolio: React.FC = () => {
     },
     {
       id: 2,
-      title: "Web Development",
-      category: "Solo Project",
+      title: "Akavia Rates Your Anime!",
+      category: "Web Development",
       description: "A fun web app that predicts the attractiveness of anime characters using a custom-trained machine learning regression model, blending subjective ratings with objective features.",
       image: "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=800", // placeholder stock image, anime-inspired UI screenshot would be even better
       tags: ["Machine Learning", "Regression", "Web App"],
