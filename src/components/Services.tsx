@@ -76,7 +76,7 @@ const Services: React.FC = () => {
             Our <span className="font-semibold">Services</span>
           </h2>
           <p className="text-lg text-[#363A3D]/70 max-w-2xl mx-auto">
-            Comprehensive digital solutions tailored to meet your unique business needs and objectives.
+            Comprehensive digital and IT solutions tailored to meet your unique business needs and objectives.
           </p>
         </motion.div>
 
