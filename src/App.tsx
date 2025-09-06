@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <LayoutProvider>
-      <div className="font-['Poppins'] scroll-smooth">
+      <div className="font-['Poppins'] scroll-smooth overflow-hidden">
         <Navigation />
         <main>
           <Hero />
